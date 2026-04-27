@@ -5,7 +5,10 @@
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="facing" val="west"/>
-      <a name="appear" val="center"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="bit0" val="2"/>
+      <a name="bit2" val="0"/>
     </tool>
     <tool name="Pin">
       <a name="facing" val="north"/>
@@ -17,8 +20,7 @@
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Tunnel">
-      <a name="width" val="32"/>
-      <a name="labelfont" val="Dialog plain 12"/>
+      <a name="facing" val="west"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -31,20 +33,33 @@
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="facing" val="north"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
+    <tool name="AND Gate">
+      <a name="width" val="8"/>
+    </tool>
+    <tool name="OR Gate">
+      <a name="width" val="8"/>
+    </tool>
     <tool name="NAND Gate">
-      <a name="inputs" val="4"/>
+      <a name="facing" val="south"/>
     </tool>
     <tool name="NOR Gate">
-      <a name="inputs" val="3"/>
+      <a name="facing" val="north"/>
+    </tool>
+    <tool name="XOR Gate">
+      <a name="width" val="8"/>
+    </tool>
+    <tool name="Controlled Inverter">
+      <a name="facing" val="south"/>
     </tool>
   </lib>
   <lib desc="#TTL" name="2"/>
   <lib desc="#Plexers" name="3">
     <tool name="Multiplexer">
+      <a name="width" val="8"/>
       <a name="enable" val="false"/>
     </tool>
     <tool name="Demultiplexer">
@@ -56,22 +71,31 @@
   </lib>
   <lib desc="#Arithmetic" name="4"/>
   <lib desc="#Memory" name="5">
+    <tool name="Register">
+      <a name="width" val="4"/>
+    </tool>
     <tool name="ROM">
       <a name="contents">addr/data: 8 8
 0
 </a>
     </tool>
   </lib>
-  <lib desc="#I/O" name="6"/>
+  <lib desc="#I/O" name="6">
+    <tool name="LED">
+      <a name="facing" val="north"/>
+    </tool>
+  </lib>
   <lib desc="#Base" name="7">
     <tool name="Text Tool">
       <a name="text" val=""/>
-      <a name="font" val="Dialog plain 12"/>
+      <a name="font" val="SansSerif plain 12"/>
       <a name="color" val="#000000"/>
       <a name="halign" val="center"/>
       <a name="valign" val="base"/>
     </tool>
   </lib>
+  <lib desc="file#C:\Users\Lenovo\Logisim\Plugin\B2018-7.1.circ" name="8"/>
+  <lib desc="jar#C:\Users\Lenovo\Logisim\Plugin\logisim_xtended.jar#net.net16.jeremiahlowe.logisim.logisim_xtended.Components" name="9"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -89,7 +113,7 @@
     <sep/>
     <tool lib="7" name="Text Tool">
       <a name="text" val=""/>
-      <a name="font" val="Dialog plain 12"/>
+      <a name="font" val="SansSerif plain 12"/>
       <a name="color" val="#000000"/>
       <a name="halign" val="center"/>
       <a name="valign" val="base"/>
@@ -232,9 +256,6 @@
     <wire from="(330,380)" to="(360,380)"/>
     <wire from="(380,480)" to="(380,550)"/>
     <wire from="(380,550)" to="(730,550)"/>
-    <wire from="(730,220)" to="(730,550)"/>
-    <wire from="(730,220)" to="(740,220)"/>
-    <wire from="(740,190)" to="(740,220)"/>
     <wire from="(330,380)" to="(330,440)"/>
     <wire from="(330,440)" to="(360,440)"/>
     <wire from="(340,390)" to="(340,450)"/>
@@ -246,10 +267,25 @@
     <wire from="(350,400)" to="(360,400)"/>
     <wire from="(270,400)" to="(350,400)"/>
     <wire from="(360,470)" to="(360,480)"/>
+    <wire from="(740,200)" to="(740,210)"/>
+    <wire from="(720,230)" to="(730,230)"/>
+    <wire from="(20,10)" to="(20,80)"/>
+    <wire from="(20,110)" to="(780,110)"/>
+    <wire from="(730,230)" to="(730,550)"/>
+    <wire from="(780,10)" to="(780,80)"/>
     <wire from="(380,10)" to="(380,30)"/>
+    <wire from="(730,200)" to="(730,230)"/>
+    <wire from="(380,10)" to="(780,10)"/>
     <wire from="(780,80)" to="(780,110)"/>
     <wire from="(380,80)" to="(780,80)"/>
+    <wire from="(380,30)" to="(380,80)"/>
+    <wire from="(20,10)" to="(380,10)"/>
+    <wire from="(20,80)" to="(380,80)"/>
+    <wire from="(20,80)" to="(20,110)"/>
+    <wire from="(380,10)" to="(380,30)"/>
     <wire from="(380,10)" to="(780,10)"/>
+    <wire from="(380,80)" to="(780,80)"/>
+    <wire from="(780,80)" to="(780,110)"/>
     <wire from="(20,10)" to="(20,80)"/>
     <wire from="(380,30)" to="(380,80)"/>
     <wire from="(20,10)" to="(380,10)"/>
@@ -257,22 +293,91 @@
     <wire from="(20,80)" to="(380,80)"/>
     <wire from="(780,10)" to="(780,80)"/>
     <wire from="(20,80)" to="(20,110)"/>
-    <wire from="(750,190)" to="(750,200)"/>
-    <wire from="(380,10)" to="(380,30)"/>
-    <wire from="(380,80)" to="(780,80)"/>
-    <wire from="(380,10)" to="(780,10)"/>
-    <wire from="(780,80)" to="(780,110)"/>
-    <wire from="(20,10)" to="(20,80)"/>
-    <wire from="(380,30)" to="(380,80)"/>
-    <wire from="(20,10)" to="(380,10)"/>
-    <wire from="(20,80)" to="(380,80)"/>
-    <wire from="(20,110)" to="(780,110)"/>
-    <wire from="(780,10)" to="(780,80)"/>
-    <wire from="(20,80)" to="(20,110)"/>
-    <comp lib="1" loc="(600,290)" name="XOR Gate"/>
-    <comp loc="(260,310)" name="4位奇偶校验器"/>
+    <comp lib="7" loc="(400,102)" name="Text">
+      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,340)" name="NOT Gate"/>
+    <comp lib="7" loc="(169,64)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,330)" name="NOT Gate"/>
+    <comp lib="0" loc="(330,320)" name="Power"/>
     <comp lib="0" loc="(650,40)" name="Tunnel">
       <a name="label" val="NoError"/>
+    </comp>
+    <comp lib="0" loc="(380,480)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="4"/>
+      <a name="label" val="错误位"/>
+    </comp>
+    <comp lib="1" loc="(600,370)" name="XOR Gate"/>
+    <comp lib="1" loc="(430,360)" name="NOT Gate"/>
+    <comp lib="0" loc="(670,260)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="NoError"/>
+    </comp>
+    <comp lib="0" loc="(170,30)" name="Pin">
+      <a name="width" val="7"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Input"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="7" loc="(553,70)" name="Text">
+      <a name="text" val="输出引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(430,370)" name="NOT Gate"/>
+    <comp lib="0" loc="(530,40)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Output"/>
+    </comp>
+    <comp lib="1" loc="(430,400)" name="NOT Gate"/>
+    <comp lib="1" loc="(430,390)" name="NOT Gate"/>
+    <comp lib="0" loc="(740,210)" name="Ground"/>
+    <comp lib="7" loc="(408,126)" name="Text">
+      <a name="text" val="提示：使用异或门、4位奇偶校验电路和74x138子电路实现7位汉明码纠错电路。"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(600,290)" name="XOR Gate"/>
+    <comp loc="(260,370)" name="4位奇偶校验器"/>
+    <comp lib="0" loc="(200,30)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Input"/>
+    </comp>
+    <comp lib="1" loc="(430,380)" name="NOT Gate"/>
+    <comp lib="0" loc="(510,40)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Output"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(600,530)" name="XOR Gate"/>
+    <comp lib="1" loc="(360,340)" name="NOT Gate"/>
+    <comp lib="1" loc="(600,330)" name="XOR Gate"/>
+    <comp lib="1" loc="(430,350)" name="NOT Gate"/>
+    <comp loc="(260,310)" name="4位奇偶校验器"/>
+    <comp lib="7" loc="(168,64)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(380,480)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(110,180)" name="Splitter">
+      <a name="fanout" val="7"/>
+      <a name="incoming" val="7"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp loc="(410,350)" name="3-8译码器"/>
+    <comp lib="0" loc="(670,370)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Output"/>
     </comp>
     <comp lib="0" loc="(680,40)" name="Pin">
       <a name="facing" val="west"/>
@@ -280,109 +385,28 @@
       <a name="label" val="NoError"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(600,410)" name="XOR Gate"/>
-    <comp lib="7" loc="(400,102)" name="Text">
-      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="7" loc="(168,64)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(600,530)" name="XOR Gate"/>
-    <comp lib="0" loc="(530,40)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Output"/>
-    </comp>
     <comp lib="1" loc="(600,490)" name="XOR Gate"/>
-    <comp lib="0" loc="(200,30)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Input"/>
-    </comp>
-    <comp lib="7" loc="(553,70)" name="Text">
-      <a name="text" val="输出引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(430,360)" name="NOT Gate"/>
     <comp lib="0" loc="(670,370)" name="Splitter">
       <a name="facing" val="west"/>
       <a name="fanout" val="7"/>
       <a name="incoming" val="7"/>
     </comp>
-    <comp lib="1" loc="(360,350)" name="NOT Gate"/>
-    <comp lib="0" loc="(330,320)" name="Power"/>
-    <comp lib="1" loc="(600,450)" name="XOR Gate"/>
-    <comp lib="0" loc="(170,30)" name="Pin">
-      <a name="width" val="7"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Input"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(730,220)" name="Tunnel">
+    <comp lib="0" loc="(720,230)" name="Tunnel">
       <a name="width" val="4"/>
       <a name="label" val="错误位"/>
-    </comp>
-    <comp lib="1" loc="(430,390)" name="NOT Gate"/>
-    <comp lib="7" loc="(406,137)" name="Text">
-      <a name="text" val="提示：使用异或门、4位奇偶校验电路和74x138子电路实现7位汉明码纠错电路。"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(360,340)" name="NOT Gate"/>
-    <comp lib="0" loc="(670,370)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Output"/>
-    </comp>
-    <comp lib="0" loc="(380,480)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="4"/>
-      <a name="label" val="错误位"/>
-    </comp>
-    <comp lib="6" loc="(740,190)" name="Hex Digit Display"/>
-    <comp lib="0" loc="(380,480)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="appear" val="right"/>
     </comp>
     <comp loc="(260,430)" name="4位奇偶校验器">
       <a name="label" val=" "/>
     </comp>
-    <comp lib="1" loc="(430,330)" name="NOT Gate"/>
-    <comp lib="0" loc="(360,480)" name="Ground"/>
-    <comp lib="0" loc="(670,260)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="NoError"/>
-    </comp>
-    <comp lib="0" loc="(750,200)" name="Ground"/>
-    <comp loc="(410,350)" name="3-8译码器"/>
-    <comp lib="0" loc="(110,180)" name="Splitter">
-      <a name="fanout" val="7"/>
-      <a name="incoming" val="7"/>
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="1" loc="(430,350)" name="NOT Gate"/>
-    <comp lib="1" loc="(430,380)" name="NOT Gate"/>
-    <comp lib="1" loc="(600,370)" name="XOR Gate"/>
+    <comp lib="1" loc="(600,410)" name="XOR Gate"/>
+    <comp lib="1" loc="(360,350)" name="NOT Gate"/>
     <comp lib="0" loc="(80,180)" name="Tunnel">
       <a name="width" val="7"/>
       <a name="label" val="Input"/>
     </comp>
-    <comp lib="1" loc="(430,400)" name="NOT Gate"/>
-    <comp lib="1" loc="(430,340)" name="NOT Gate"/>
-    <comp lib="1" loc="(430,370)" name="NOT Gate"/>
-    <comp loc="(260,370)" name="4位奇偶校验器"/>
-    <comp lib="7" loc="(169,64)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(510,40)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Output"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(600,330)" name="XOR Gate"/>
+    <comp lib="0" loc="(360,480)" name="Ground"/>
+    <comp lib="6" loc="(730,200)" name="Hex Digit Display"/>
+    <comp lib="1" loc="(600,450)" name="XOR Gate"/>
   </circuit>
   <circuit name="3-8译码器">
     <a name="circuit" val="3-8译码器"/>
@@ -499,6 +523,81 @@
     <wire from="(550,260)" to="(590,260)"/>
     <wire from="(360,290)" to="(590,290)"/>
     <wire from="(630,280)" to="(640,280)"/>
+    <comp lib="0" loc="(630,460)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y5_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(590,410)" name="NOT Gate"/>
+    <comp lib="1" loc="(590,240)" name="NOT Gate"/>
+    <comp lib="0" loc="(640,280)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y2_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(630,520)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y6_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(590,170)" name="NOT Gate"/>
+    <comp lib="7" loc="(435,677)" name="Text">
+      <a name="text" val="3-8译码器"/>
+      <a name="font" val="Dialog bold 24"/>
+    </comp>
+    <comp lib="1" loc="(590,180)" name="NOT Gate"/>
+    <comp lib="1" loc="(590,470)" name="NOT Gate"/>
+    <comp lib="1" loc="(590,150)" name="NOT Gate"/>
+    <comp lib="1" loc="(590,270)" name="NOT Gate"/>
+    <comp lib="1" loc="(630,340)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(630,520)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(630,580)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(630,340)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y3_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(590,300)" name="NOT Gate"/>
+    <comp lib="0" loc="(210,300)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G2A_L"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(630,580)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y7_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(190,600)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="C"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(630,460)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(630,160)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y0_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(190,520)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="west"/>
+    </comp>
     <comp lib="0" loc="(190,270)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="G1"/>
@@ -507,110 +606,20 @@
     <comp lib="1" loc="(630,400)" name="NAND Gate">
       <a name="inputs" val="4"/>
     </comp>
-    <comp lib="1" loc="(630,580)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(590,170)" name="NOT Gate"/>
-    <comp lib="0" loc="(630,340)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y3_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(640,280)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y2_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(630,280)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(630,160)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(630,220)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(590,270)" name="NOT Gate"/>
     <comp lib="0" loc="(630,220)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Y1_L"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(210,330)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="G2B_L"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(590,390)" name="NOT Gate"/>
-    <comp lib="0" loc="(630,580)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y7_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(590,410)" name="NOT Gate"/>
-    <comp lib="1" loc="(210,270)" name="NOT Gate"/>
-    <comp lib="1" loc="(630,340)" name="NAND Gate">
+    <comp lib="1" loc="(590,360)" name="NOT Gate"/>
+    <comp lib="1" loc="(630,220)" name="NAND Gate">
       <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(590,470)" name="NOT Gate"/>
-    <comp lib="0" loc="(630,520)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y6_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(290,300)" name="NOR Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="0" loc="(630,460)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y5_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(190,600)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="C"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(590,300)" name="NOT Gate"/>
-    <comp lib="1" loc="(630,460)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="0" loc="(190,520)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="A"/>
-      <a name="labelloc" val="west"/>
     </comp>
     <comp lib="0" loc="(190,560)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="B"/>
       <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(210,300)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="G2A_L"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(590,150)" name="NOT Gate"/>
-    <comp lib="1" loc="(590,180)" name="NOT Gate"/>
-    <comp lib="1" loc="(630,520)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(590,230)" name="NOT Gate"/>
-    <comp lib="0" loc="(630,160)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y0_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="7" loc="(435,677)" name="Text">
-      <a name="text" val="3-8译码器"/>
-      <a name="font" val="Dialog bold 24"/>
     </comp>
     <comp lib="0" loc="(630,400)" name="Pin">
       <a name="facing" val="west"/>
@@ -618,9 +627,24 @@
       <a name="label" val="Y4_L"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="1" loc="(630,160)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
     <comp lib="1" loc="(590,510)" name="NOT Gate"/>
-    <comp lib="1" loc="(590,240)" name="NOT Gate"/>
-    <comp lib="1" loc="(590,360)" name="NOT Gate"/>
+    <comp lib="0" loc="(210,330)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G2B_L"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(290,300)" name="NOR Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="1" loc="(210,270)" name="NOT Gate"/>
+    <comp lib="1" loc="(590,230)" name="NOT Gate"/>
+    <comp lib="1" loc="(630,280)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(590,390)" name="NOT Gate"/>
   </circuit>
   <circuit name="4位奇偶校验器">
     <a name="circuit" val="4位奇偶校验器"/>
@@ -648,12 +672,7 @@
     <wire from="(100,130)" to="(100,150)"/>
     <wire from="(140,120)" to="(140,140)"/>
     <wire from="(140,110)" to="(140,120)"/>
-    <comp lib="0" loc="(60,160)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="N3"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(160,110)" name="NOT Gate"/>
+    <comp lib="1" loc="(140,120)" name="XOR Gate"/>
     <comp lib="1" loc="(100,150)" name="XOR Gate"/>
     <comp lib="0" loc="(140,140)" name="Pin">
       <a name="facing" val="west"/>
@@ -661,23 +680,25 @@
       <a name="label" val="ODD"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(60,100)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="N0"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(60,140)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="N2"/>
-      <a name="labelloc" val="west"/>
-    </comp>
     <comp lib="0" loc="(60,120)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="N1"/>
       <a name="labelloc" val="west"/>
     </comp>
+    <comp lib="0" loc="(60,100)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="N0"/>
+      <a name="labelloc" val="west"/>
+    </comp>
     <comp lib="7" loc="(189,208)" name="Text">
       <a name="text" val="4位奇偶校验电路"/>
+    </comp>
+    <comp lib="1" loc="(100,110)" name="XOR Gate"/>
+    <comp lib="1" loc="(160,110)" name="NOT Gate"/>
+    <comp lib="0" loc="(60,140)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="N2"/>
+      <a name="labelloc" val="west"/>
     </comp>
     <comp lib="0" loc="(160,110)" name="Pin">
       <a name="facing" val="west"/>
@@ -685,7 +706,10 @@
       <a name="label" val="EVEN"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(100,110)" name="XOR Gate"/>
-    <comp lib="1" loc="(140,120)" name="XOR Gate"/>
+    <comp lib="0" loc="(60,160)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="N3"/>
+      <a name="labelloc" val="west"/>
+    </comp>
   </circuit>
 </project>
