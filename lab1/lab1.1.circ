@@ -12,11 +12,13 @@
     </tool>
     <tool name="Pin">
       <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Probe">
       <a name="facing" val="west"/>
-      <a name="radix" val="10signed"/>
+      <a name="radix" val="10unsigned"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Tunnel">
@@ -179,7 +181,6 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="jar#C:\Users\Lenovo\Logisim\Plugin\logisim_xtended.jar#net.net16.jeremiahlowe.logisim.logisim_xtended.Components" name="8"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -263,10 +264,6 @@
     <wire from="(290,270)" to="(290,320)"/>
     <wire from="(290,270)" to="(330,270)"/>
     <wire from="(360,260)" to="(450,260)"/>
-    <comp lib="7" loc="(46,29)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
     <comp lib="0" loc="(470,50)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -274,14 +271,19 @@
       <a name="labelloc" val="east"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="7" loc="(394,126)" name="Text">
-      <a name="text" val="请勿更改电路封装外观。"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(230,260)" name="AND Gate">
+    <comp lib="0" loc="(170,50)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+      <a name="labelloc" val="west"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(230,320)" name="AND Gate">
+    <comp lib="0" loc="(110,50)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="X"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,310)" name="Tunnel">
+      <a name="label" val="Z"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(450,260)" name="Tunnel">
@@ -289,20 +291,11 @@
       <a name="label" val="F"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="7" loc="(235,166)" name="Text">
-      <a name="text" val="3输入多数表决器电路"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(320,50)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Z"/>
+    <comp lib="0" loc="(430,50)" name="Tunnel">
+      <a name="label" val="F"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(150,200)" name="Tunnel">
-      <a name="label" val="X"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(230,200)" name="AND Gate">
+    <comp lib="1" loc="(230,260)" name="AND Gate">
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="1" loc="(360,260)" name="OR Gate">
@@ -315,20 +308,23 @@
       <a name="labelloc" val="west"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(110,50)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="X"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
     <comp lib="0" loc="(190,50)" name="Tunnel">
       <a name="facing" val="west"/>
       <a name="label" val="Y"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(170,50)" name="Pin">
-      <a name="tristate" val="false"/>
+    <comp lib="0" loc="(150,250)" name="Tunnel">
       <a name="label" val="Y"/>
-      <a name="labelloc" val="west"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="7" loc="(235,166)" name="Text">
+      <a name="text" val="3输入多数表决器电路"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(230,200)" name="AND Gate">
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(230,320)" name="AND Gate">
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(300,50)" name="Pin">
@@ -337,24 +333,29 @@
       <a name="labelloc" val="west"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(430,50)" name="Tunnel">
-      <a name="label" val="F"/>
+    <comp lib="7" loc="(46,29)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="7" loc="(394,126)" name="Text">
+      <a name="text" val="请勿更改电路封装外观。"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="7" loc="(402,31)" name="Text">
+      <a name="text" val="输出引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,200)" name="Tunnel">
+      <a name="label" val="X"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(150,250)" name="Tunnel">
-      <a name="label" val="Y"/>
+    <comp lib="0" loc="(320,50)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Z"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="7" loc="(189,126)" name="Text">
       <a name="text" val="请勿增加、删除引脚，用隧道标签构建电路，"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(150,310)" name="Tunnel">
-      <a name="label" val="Z"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="7" loc="(402,31)" name="Text">
-      <a name="text" val="输出引脚"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
   </circuit>
@@ -378,20 +379,11 @@
     <wire from="(340,70)" to="(370,70)"/>
     <wire from="(360,230)" to="(410,230)"/>
     <wire from="(360,220)" to="(360,230)"/>
-    <comp lib="0" loc="(340,120)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(410,80)" name="XOR Gate"/>
-    <comp lib="0" loc="(340,70)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
     <comp lib="0" loc="(340,220)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(410,180)" name="Pin">
+    <comp lib="0" loc="(410,230)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelfont" val="Dialog plain 12"/>
@@ -401,19 +393,28 @@
       <a name="output" val="true"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(410,180)" name="XOR Gate"/>
-    <comp lib="0" loc="(410,230)" name="Pin">
+    <comp lib="1" loc="(410,130)" name="XOR Gate"/>
+    <comp lib="0" loc="(340,170)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(410,80)" name="XOR Gate"/>
+    <comp lib="0" loc="(340,120)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(410,180)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
+    <comp lib="1" loc="(410,180)" name="XOR Gate"/>
     <comp lib="0" loc="(410,80)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(410,130)" name="XOR Gate"/>
-    <comp lib="0" loc="(340,170)" name="Pin">
+    <comp lib="0" loc="(340,70)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
@@ -430,35 +431,15 @@
     <wire from="(120,180)" to="(200,180)"/>
     <wire from="(200,100)" to="(200,180)"/>
     <comp lib="1" loc="(240,90)" name="XOR Gate"/>
-    <comp lib="0" loc="(120,100)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I1"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(240,110)" name="NOT Gate">
-      <a name="facing" val="south"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(120,140)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I2"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="1" loc="(200,80)" name="XOR Gate"/>
     <comp lib="0" loc="(240,90)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="P_even"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(120,180)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I3"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(120,60)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="I0"/>
+    <comp lib="1" loc="(160,70)" name="XOR Gate"/>
+    <comp lib="1" loc="(240,110)" name="NOT Gate">
+      <a name="facing" val="south"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(240,110)" name="Pin">
@@ -468,6 +449,26 @@
       <a name="labelloc" val="south"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="1" loc="(160,70)" name="XOR Gate"/>
+    <comp lib="0" loc="(120,140)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I2"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(120,100)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I1"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(120,60)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I0"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(200,80)" name="XOR Gate"/>
+    <comp lib="0" loc="(120,180)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="I3"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
   </circuit>
 </project>

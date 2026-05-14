@@ -94,10 +94,6 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#C:\Users\Lenovo\Logisim\Plugin\B2018-7.1.circ" name="8"/>
-  <lib desc="jar#C:\Users\Lenovo\Logisim\Plugin\logisim_xtended.jar#net.net16.jeremiahlowe.logisim.logisim_xtended.Components" name="9"/>
-  <lib desc="file#C:\Users\Lenovo\Logisim\Plugin\B2018-7.1.circ" name="10"/>
-  <lib desc="file#C:\Users\Lenovo\Logisim\Plugin\B2018-7.1.circ" name="11"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -290,11 +286,144 @@
     <wire from="(500,380)" to="(500,480)"/>
     <wire from="(570,460)" to="(600,460)"/>
     <wire from="(500,480)" to="(600,480)"/>
+    <comp lib="0" loc="(620,290)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(490,200)" name="NOR Gate">
+      <a name="facing" val="north"/>
+      <a name="inputs" val="4"/>
+    </comp>
     <comp lib="7" loc="(225,66)" name="Text">
       <a name="text" val="输入引脚"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
+    <comp lib="0" loc="(100,390)" name="Tunnel">
+      <a name="label" val="Cin"/>
+    </comp>
+    <comp loc="(290,370)" name="FA">
+      <a name="label" val="FA0"/>
+    </comp>
+    <comp lib="0" loc="(640,470)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="OF"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(490,200)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="label" val="ZF"/>
+    </comp>
+    <comp lib="0" loc="(640,430)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="CF"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(330,490)" name="XOR Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(210,250)" name="Ground"/>
+    <comp lib="0" loc="(140,30)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="4"/>
+      <a name="label" val="操作数x"/>
+    </comp>
+    <comp loc="(560,370)" name="FA">
+      <a name="label" val="FA3"/>
+    </comp>
+    <comp lib="7" loc="(361,137)" name="Text">
+      <a name="text" val="提示：使用独立逻辑门及全加器FA子电路实现4位二进制数加减法器，禁止直接使用加减法器组件。"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
     <comp lib="0" loc="(380,240)" name="Splitter">
+      <a name="facing" val="south"/>
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="7" loc="(553,70)" name="Text">
+      <a name="text" val="输出引脚"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="1" loc="(640,430)" name="XOR Gate"/>
+    <comp lib="0" loc="(500,30)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="4"/>
+      <a name="label" val="SUM"/>
+    </comp>
+    <comp lib="0" loc="(280,30)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="4"/>
+      <a name="label" val="操作数y"/>
+    </comp>
+    <comp lib="0" loc="(650,30)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp lib="6" loc="(200,240)" name="Hex Digit Display"/>
+    <comp lib="1" loc="(510,490)" name="XOR Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(600,370)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Cout"/>
+    </comp>
+    <comp lib="7" loc="(253,217)" name="Text">
+      <a name="text" val="+"/>
+      <a name="font" val="Dialog bold 22"/>
+    </comp>
+    <comp lib="0" loc="(260,30)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="Y"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="6" loc="(290,240)" name="Hex Digit Display"/>
+    <comp lib="0" loc="(120,30)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="X"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="7" loc="(400,102)" name="Text">
+      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp loc="(470,370)" name="FA">
+      <a name="label" val="FA2"/>
+    </comp>
+    <comp lib="6" loc="(380,240)" name="Hex Digit Display"/>
+    <comp lib="0" loc="(90,440)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="操作数x"/>
+    </comp>
+    <comp lib="0" loc="(470,30)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="F"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(420,490)" name="XOR Gate">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(90,440)" name="Splitter">
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="0" loc="(640,350)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="SF"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(610,30)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="label" val="Cout"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp loc="(380,370)" name="FA">
+      <a name="label" val="FA1"/>
+    </comp>
+    <comp lib="0" loc="(290,240)" name="Splitter">
       <a name="facing" val="south"/>
       <a name="appear" val="right"/>
     </comp>
@@ -304,163 +433,30 @@
       <a name="label" val="Cin"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(90,440)" name="Tunnel">
-      <a name="width" val="4"/>
-      <a name="label" val="操作数x"/>
-    </comp>
-    <comp lib="6" loc="(290,240)" name="Hex Digit Display"/>
-    <comp lib="7" loc="(253,217)" name="Text">
-      <a name="text" val="+"/>
+    <comp lib="1" loc="(640,470)" name="XOR Gate"/>
+    <comp lib="7" loc="(342,217)" name="Text">
+      <a name="text" val="="/>
       <a name="font" val="Dialog bold 22"/>
     </comp>
-    <comp lib="0" loc="(290,240)" name="Splitter">
-      <a name="facing" val="south"/>
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="0" loc="(90,440)" name="Splitter">
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="0" loc="(640,470)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="OF"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(640,470)" name="XOR Gate"/>
     <comp lib="0" loc="(90,550)" name="Tunnel">
       <a name="width" val="4"/>
       <a name="label" val="操作数y"/>
     </comp>
-    <comp lib="6" loc="(200,240)" name="Hex Digit Display"/>
-    <comp lib="1" loc="(330,490)" name="XOR Gate">
+    <comp lib="0" loc="(90,550)" name="Splitter">
+      <a name="appear" val="right"/>
+    </comp>
+    <comp lib="1" loc="(240,490)" name="XOR Gate">
       <a name="facing" val="north"/>
     </comp>
-    <comp lib="0" loc="(210,250)" name="Ground"/>
-    <comp lib="0" loc="(280,30)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="4"/>
-      <a name="label" val="操作数y"/>
-    </comp>
+    <comp lib="0" loc="(390,250)" name="Ground"/>
     <comp lib="0" loc="(620,290)" name="Tunnel">
       <a name="facing" val="west"/>
       <a name="width" val="4"/>
       <a name="label" val="SUM"/>
     </comp>
-    <comp lib="1" loc="(240,490)" name="XOR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="1" loc="(420,490)" name="XOR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(140,30)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="4"/>
-      <a name="label" val="操作数x"/>
-    </comp>
-    <comp lib="1" loc="(490,200)" name="NOR Gate">
-      <a name="facing" val="north"/>
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="7" loc="(342,217)" name="Text">
-      <a name="text" val="="/>
-      <a name="font" val="Dialog bold 22"/>
-    </comp>
-    <comp lib="0" loc="(390,250)" name="Ground"/>
     <comp lib="0" loc="(120,60)" name="Tunnel">
       <a name="facing" val="west"/>
       <a name="label" val="Cin"/>
-    </comp>
-    <comp lib="1" loc="(510,490)" name="XOR Gate">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="7" loc="(553,70)" name="Text">
-      <a name="text" val="输出引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp loc="(560,370)" name="FA">
-      <a name="label" val="FA3"/>
-    </comp>
-    <comp lib="1" loc="(640,430)" name="XOR Gate"/>
-    <comp lib="0" loc="(260,30)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Y"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(470,30)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-      <a name="label" val="F"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp loc="(470,370)" name="FA">
-      <a name="label" val="FA2"/>
-    </comp>
-    <comp lib="7" loc="(400,102)" name="Text">
-      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(610,30)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="label" val="Cout"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(600,370)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Cout"/>
-    </comp>
-    <comp lib="0" loc="(650,30)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Cout"/>
-    </comp>
-    <comp lib="0" loc="(500,30)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="4"/>
-      <a name="label" val="SUM"/>
-    </comp>
-    <comp loc="(380,370)" name="FA">
-      <a name="label" val="FA1"/>
-    </comp>
-    <comp lib="0" loc="(490,200)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="label" val="ZF"/>
-    </comp>
-    <comp lib="0" loc="(100,390)" name="Tunnel">
-      <a name="label" val="Cin"/>
-    </comp>
-    <comp lib="0" loc="(640,430)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="CF"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(620,290)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="6" loc="(380,240)" name="Hex Digit Display"/>
-    <comp lib="0" loc="(120,30)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="X"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="7" loc="(361,137)" name="Text">
-      <a name="text" val="提示：使用独立逻辑门及全加器FA子电路实现4位二进制数加减法器，禁止直接使用加减法器组件。"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(90,550)" name="Splitter">
-      <a name="appear" val="right"/>
-    </comp>
-    <comp lib="0" loc="(640,350)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="SF"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp loc="(290,370)" name="FA">
-      <a name="label" val="FA0"/>
     </comp>
   </circuit>
   <circuit name="FA">
@@ -509,24 +505,27 @@
       <a name="label" val="Cout"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(170,290)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="B"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(340,300)" name="AND Gate"/>
-    <comp lib="1" loc="(250,240)" name="XOR Gate"/>
     <comp lib="7" loc="(171,465)" name="Text">
       <a name="font" val="Dialog bold 16"/>
     </comp>
+    <comp lib="1" loc="(250,240)" name="XOR Gate"/>
+    <comp lib="1" loc="(340,300)" name="AND Gate"/>
     <comp lib="0" loc="(170,230)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="A"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="1" loc="(340,250)" name="XOR Gate"/>
-    <comp lib="1" loc="(250,280)" name="AND Gate"/>
     <comp lib="1" loc="(390,290)" name="OR Gate"/>
+    <comp lib="1" loc="(340,250)" name="XOR Gate"/>
+    <comp lib="7" loc="(275,412)" name="Text">
+      <a name="text" val="全加器"/>
+      <a name="font" val="Dialog bold 16"/>
+    </comp>
+    <comp lib="0" loc="(170,290)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="west"/>
+    </comp>
     <comp lib="0" loc="(390,250)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -538,9 +537,6 @@
       <a name="label" val="Cin"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="7" loc="(275,412)" name="Text">
-      <a name="text" val="全加器"/>
-      <a name="font" val="Dialog bold 16"/>
-    </comp>
+    <comp lib="1" loc="(250,280)" name="AND Gate"/>
   </circuit>
 </project>

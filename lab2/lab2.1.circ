@@ -4,7 +4,11 @@
 
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="appear" val="center"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="3"/>
+      <a name="bit0" val="2"/>
+      <a name="bit2" val="0"/>
     </tool>
     <tool name="Pin">
       <a name="facing" val="north"/>
@@ -16,8 +20,7 @@
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Tunnel">
-      <a name="width" val="32"/>
-      <a name="labelfont" val="Dialog plain 12"/>
+      <a name="facing" val="west"/>
     </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
@@ -30,7 +33,7 @@
       <a name="labelfont" val="Dialog plain 12"/>
     </tool>
     <tool name="Constant">
-      <a name="value" val="0x0"/>
+      <a name="facing" val="north"/>
     </tool>
   </lib>
   <lib desc="#Gates" name="1">
@@ -245,110 +248,25 @@
     <wire from="(370,620)" to="(560,620)"/>
     <wire from="(370,560)" to="(370,620)"/>
     <wire from="(370,620)" to="(370,680)"/>
-    <comp lib="0" loc="(250,70)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="B"/>
+    <comp lib="1" loc="(600,540)" name="NAND Gate">
+      <a name="inputs" val="4"/>
     </comp>
+    <comp lib="0" loc="(180,410)" name="Tunnel">
+      <a name="label" val="G2B_L"/>
+    </comp>
+    <comp lib="1" loc="(560,250)" name="NOT Gate"/>
     <comp lib="0" loc="(200,40)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="G2A_L"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(230,70)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="B"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="1" loc="(260,380)" name="NOR Gate">
-      <a name="inputs" val="3"/>
-    </comp>
-    <comp lib="0" loc="(340,40)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="G2B_L"/>
-    </comp>
-    <comp lib="0" loc="(180,380)" name="Tunnel">
-      <a name="label" val="G2A_L"/>
-    </comp>
-    <comp lib="0" loc="(440,70)" name="Tunnel">
-      <a name="label" val="Y3_L"/>
-    </comp>
-    <comp lib="0" loc="(160,70)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="A"/>
-    </comp>
-    <comp lib="1" loc="(560,440)" name="NOT Gate"/>
-    <comp lib="1" loc="(560,260)" name="NOT Gate"/>
-    <comp lib="0" loc="(600,540)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y5_L"/>
-    </comp>
-    <comp lib="0" loc="(90,40)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="G1"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(210,40)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="G2A_L"/>
-    </comp>
-    <comp lib="1" loc="(560,470)" name="NOT Gate"/>
-    <comp lib="0" loc="(600,300)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y1_L"/>
-    </comp>
-    <comp lib="1" loc="(560,490)" name="NOT Gate"/>
-    <comp lib="0" loc="(600,100)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y7_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(440,40)" name="Tunnel">
-      <a name="label" val="Y0_L"/>
-    </comp>
-    <comp lib="0" loc="(700,70)" name="Tunnel">
-      <a name="label" val="Y5_L"/>
-    </comp>
-    <comp lib="0" loc="(600,70)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y4_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(600,360)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y2_L"/>
-    </comp>
-    <comp lib="0" loc="(600,420)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y3_L"/>
-    </comp>
-    <comp lib="0" loc="(730,40)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y2_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(160,680)" name="Tunnel">
-      <a name="label" val="C"/>
-    </comp>
-    <comp lib="1" loc="(600,360)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="0" loc="(730,70)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y5_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
     <comp lib="0" loc="(570,100)" name="Tunnel">
       <a name="label" val="Y7_L"/>
     </comp>
-    <comp lib="1" loc="(600,240)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(600,300)" name="NAND Gate">
-      <a name="inputs" val="4"/>
+    <comp lib="0" loc="(130,70)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="A"/>
+      <a name="labelloc" val="west"/>
     </comp>
     <comp lib="1" loc="(180,350)" name="NOT Gate"/>
     <comp lib="0" loc="(600,40)" name="Pin">
@@ -357,125 +275,210 @@
       <a name="label" val="Y1_L"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(470,70)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y3_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(600,600)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y6_L"/>
-    </comp>
-    <comp lib="1" loc="(600,660)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(560,320)" name="NOT Gate"/>
-    <comp lib="0" loc="(470,40)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="label" val="Y0_L"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="1" loc="(600,540)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="7" loc="(428,189)" name="Text">
-      <a name="text" val="提示：使用独立逻辑门实现3-8译码器，禁止直接使用译码器组件。"/>
+    <comp lib="1" loc="(560,470)" name="NOT Gate"/>
+    <comp lib="7" loc="(700,106)" name="Text">
+      <a name="text" val="输出引脚"/>
       <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="1" loc="(560,230)" name="NOT Gate"/>
-    <comp lib="7" loc="(216,109)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(440,100)" name="Tunnel">
-      <a name="label" val="Y6_L"/>
-    </comp>
-    <comp lib="1" loc="(560,550)" name="NOT Gate"/>
-    <comp lib="0" loc="(130,70)" name="Pin">
-      <a name="tristate" val="false"/>
-      <a name="label" val="A"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="7" loc="(425,152)" name="Text">
-      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(600,480)" name="Tunnel">
+    <comp lib="0" loc="(730,40)" name="Pin">
       <a name="facing" val="west"/>
-      <a name="label" val="Y4_L"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y2_L"/>
+      <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="1" loc="(560,590)" name="NOT Gate"/>
-    <comp lib="0" loc="(180,410)" name="Tunnel">
-      <a name="label" val="G2B_L"/>
-    </comp>
-    <comp lib="1" loc="(600,480)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="0" loc="(570,40)" name="Tunnel">
-      <a name="label" val="Y1_L"/>
-    </comp>
-    <comp lib="0" loc="(160,640)" name="Tunnel">
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="0" loc="(600,660)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="Y7_L"/>
-    </comp>
-    <comp lib="0" loc="(160,350)" name="Tunnel">
-      <a name="label" val="G1"/>
-    </comp>
-    <comp lib="1" loc="(600,420)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(600,600)" name="NAND Gate">
-      <a name="inputs" val="4"/>
-    </comp>
-    <comp lib="1" loc="(560,350)" name="NOT Gate"/>
     <comp lib="0" loc="(700,40)" name="Tunnel">
       <a name="label" val="Y2_L"/>
+    </comp>
+    <comp lib="0" loc="(600,300)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y1_L"/>
+    </comp>
+    <comp lib="0" loc="(570,70)" name="Tunnel">
+      <a name="label" val="Y4_L"/>
+    </comp>
+    <comp lib="0" loc="(440,70)" name="Tunnel">
+      <a name="label" val="Y3_L"/>
     </comp>
     <comp lib="0" loc="(320,70)" name="Pin">
       <a name="tristate" val="false"/>
       <a name="label" val="C"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(320,40)" name="Pin">
+    <comp lib="1" loc="(600,420)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="1" loc="(600,360)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(470,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y3_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="7" loc="(428,189)" name="Text">
+      <a name="text" val="提示：使用独立逻辑门实现3-8译码器，禁止直接使用译码器组件。"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(90,40)" name="Pin">
       <a name="tristate" val="false"/>
-      <a name="label" val="G2B_L"/>
+      <a name="label" val="G1"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(600,240)" name="Tunnel">
-      <a name="facing" val="west"/>
+    <comp lib="0" loc="(440,40)" name="Tunnel">
       <a name="label" val="Y0_L"/>
     </comp>
-    <comp lib="0" loc="(570,70)" name="Tunnel">
-      <a name="label" val="Y4_L"/>
-    </comp>
-    <comp lib="0" loc="(340,70)" name="Tunnel">
-      <a name="facing" val="west"/>
+    <comp lib="1" loc="(560,490)" name="NOT Gate"/>
+    <comp lib="0" loc="(160,680)" name="Tunnel">
       <a name="label" val="C"/>
+    </comp>
+    <comp lib="1" loc="(600,240)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(210,40)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="G2A_L"/>
+    </comp>
+    <comp lib="0" loc="(230,70)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="B"/>
+      <a name="labelloc" val="west"/>
     </comp>
     <comp lib="0" loc="(100,40)" name="Tunnel">
       <a name="facing" val="west"/>
       <a name="label" val="G1"/>
     </comp>
-    <comp lib="1" loc="(560,310)" name="NOT Gate"/>
+    <comp lib="0" loc="(730,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y5_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(160,640)" name="Tunnel">
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(160,350)" name="Tunnel">
+      <a name="label" val="G1"/>
+    </comp>
+    <comp lib="0" loc="(600,70)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y4_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(560,320)" name="NOT Gate"/>
     <comp lib="0" loc="(470,100)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="label" val="Y6_L"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="7" loc="(700,106)" name="Text">
-      <a name="text" val="输出引脚"/>
-      <a name="font" val="Dialog plain 12"/>
+    <comp lib="1" loc="(560,260)" name="NOT Gate"/>
+    <comp lib="1" loc="(600,480)" name="NAND Gate">
+      <a name="inputs" val="4"/>
     </comp>
-    <comp lib="1" loc="(560,250)" name="NOT Gate"/>
     <comp lib="1" loc="(560,380)" name="NOT Gate"/>
     <comp lib="0" loc="(160,600)" name="Tunnel">
       <a name="label" val="A"/>
+    </comp>
+    <comp lib="0" loc="(600,600)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y6_L"/>
+    </comp>
+    <comp lib="0" loc="(570,40)" name="Tunnel">
+      <a name="label" val="Y1_L"/>
+    </comp>
+    <comp lib="1" loc="(600,600)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(700,70)" name="Tunnel">
+      <a name="label" val="Y5_L"/>
+    </comp>
+    <comp lib="1" loc="(560,310)" name="NOT Gate"/>
+    <comp lib="0" loc="(600,420)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y3_L"/>
+    </comp>
+    <comp lib="1" loc="(260,380)" name="NOR Gate">
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(600,480)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y4_L"/>
+    </comp>
+    <comp lib="0" loc="(470,40)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y0_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(560,350)" name="NOT Gate"/>
+    <comp lib="0" loc="(600,660)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y7_L"/>
+    </comp>
+    <comp lib="0" loc="(180,380)" name="Tunnel">
+      <a name="label" val="G2A_L"/>
+    </comp>
+    <comp lib="0" loc="(440,100)" name="Tunnel">
+      <a name="label" val="Y6_L"/>
+    </comp>
+    <comp lib="0" loc="(600,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y7_L"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(600,360)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y2_L"/>
+    </comp>
+    <comp lib="0" loc="(340,70)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="C"/>
+    </comp>
+    <comp lib="1" loc="(600,660)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(600,540)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y5_L"/>
+    </comp>
+    <comp lib="0" loc="(160,70)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="A"/>
+    </comp>
+    <comp lib="1" loc="(560,550)" name="NOT Gate"/>
+    <comp lib="1" loc="(560,590)" name="NOT Gate"/>
+    <comp lib="0" loc="(340,40)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="G2B_L"/>
+    </comp>
+    <comp lib="7" loc="(425,152)" name="Text">
+      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(320,40)" name="Pin">
+      <a name="tristate" val="false"/>
+      <a name="label" val="G2B_L"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="1" loc="(560,440)" name="NOT Gate"/>
+    <comp lib="1" loc="(600,300)" name="NAND Gate">
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="0" loc="(250,70)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="B"/>
+    </comp>
+    <comp lib="0" loc="(600,240)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="Y0_L"/>
+    </comp>
+    <comp lib="7" loc="(216,109)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
   </circuit>
 </project>
