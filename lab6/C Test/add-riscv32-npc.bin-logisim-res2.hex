@@ -1,0 +1,16 @@
+v2.0 raw
+0 0 c1 c0 5 0 1 10
+11 c0 1 31 41 51 61 71
+81 11 40 81 91 21 40 40
+0 40 0 a a c 4 4
+44 a9 f5 15 1f 44 89 10
+8b df 4a a 7b 10 9f c1
+81 41 1 c1 81 41 1 c1
+81 0 1 0 a0 0 1 0
+11 5f a0 5*0 ff 0 0 ff
+ff 6*0 ff 9*0 ff 0 0 ff
+ff 0 ff ff 0 0 0 ff
+0 0 ff ff 6*0 ff 0 ff
+ff 0 6*ff 0 0 ff ff 0
+ff ff 0 0 0 ff 0 0
+ff ff

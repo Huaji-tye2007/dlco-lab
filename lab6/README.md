@@ -1,7 +1,7 @@
 # ABOUT THIS LAB
 
 这个实验需要手动设计的其实只有两个实验：控制器和单周期CPU的设计，另外的实验都是在进行测试，`testcase`和`C Test`都是测试文件夹，内部包含测试文件。
-考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试还是没有很好的办法实现自动化。
+考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试还是没有很好的办法实现自动化，如果有同学想出了什么好办法希望能够在issue区里分享一下。
 
 ## ABOUT autotest
 
@@ -63,3 +63,25 @@ rv32ui-p-addi.hex : 0000 0000 1100 0000 1111 1111 1110 1110 0000 0000 0000 0000 
 Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Linux环境下运行测试脚本，或者使用WSL（Windows Subsystem for Linux）来运行测试脚本。
 
 其实这部分的测试都不需要手动加载DataRAM的值，因为提供了不需要RAM的测试文件，而且产生的结果（指寄存器的值）应该是相同的（前提是DataRAM的实现绝对正确）。
+
+## ABOUT OJ
+
+这个实验中其实后面三个实验使用的都是同一张电路图，不同的是加载的数据和指令文件不同。需要注意的是，如果你需要Reset你的CPU，你需要先清空指令存储器中的数据，然后在ReSet=1下经过一个时钟沿后再将ReSet拉回0，否则CPU可能会一直处于Halt状态无法正常工作。
+
+提交测试时，记得将clk隧道连接到提供的引脚上，而不是直接连接到时钟上。时钟是用来进行本地测试的，而提交测试时OJ会提供一个时钟信号输入到这个引脚上。
+
+![本地测试时的连接](./asset/clk1.png)
+
+![提交测试时的连接](./asset/clk2.png)
+
+实验四在提交时，需要将DataRAM中的初始值设为lab6.4_d.hex0~lab6.4_d.hex3的值，并且将指令存储器中的初始值设为lab6.4_tst.hex的值。实验三在提交时，需要将指令存储器中的初始值设为lab6.3-tst.hex的值。
+
+## ABOUT HOW TO VIEW INNER REGISTER VALUES
+
+如果你想在测试过程中查看CPU内部寄存器的值，直接在左边查看子电路可能行不通。这时需要在主电路中右键你的IDU，点击“查看IDU”，然后会跳到CPU电路中真正的IDU电路中，然后再右键你的寄存器堆，点击“查看Regfile”，就可以在这里看到寄存器的值了。
+
+![查看IDU](./asset/viewidu.png)
+
+![查看Regfile](./asset/viewregfile.png)
+
+![Regfile中的寄存器值](./asset/regfile.png)
