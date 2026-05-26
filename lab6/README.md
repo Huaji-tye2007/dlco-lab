@@ -78,10 +78,18 @@ Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Li
 
 ## ABOUT HOW TO VIEW INNER REGISTER VALUES
 
-如果你想在测试过程中查看CPU内部寄存器的值，直接在左边查看子电路可能行不通。这时需要在主电路中右键你的IDU，点击“查看IDU”，然后会跳到CPU电路中真正的IDU电路中，然后再右键你的寄存器堆，点击“查看Regfile”，就可以在这里看到寄存器的值了。
+如果你想在测试过程中查看CPU内部寄存器的值，直接在左边查看子电路**可能**行不通。这时需要在主电路中右键你的IDU，点击“查看IDU”，然后会跳到CPU电路中真正的IDU电路中，然后再右键你的寄存器堆，点击“查看Regfile”，就可以在这里看到寄存器的值了。
 
 ![查看IDU](./asset/viewidu.png)
 
 ![查看Regfile](./asset/viewregfile.png)
 
 ![Regfile中的寄存器值](./asset/regfile.png)
+
+## ABOUT PINS AND TUNNELS
+
+设计电路时，注意引脚的问题，因为后续老师修改了引脚和隧道的名称，如果你直接复制我的设计，可能会导致一些问题。仔细检查隧道和引脚的名称能不能对的上！
+
+## ABOUT THE CONTROLLER
+
+我的控制器的设计相当丑陋，不建议效仿，老师课上的PPT应该有更好的实现方法。
