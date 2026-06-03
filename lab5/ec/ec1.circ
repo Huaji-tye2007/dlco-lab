@@ -263,16 +263,41 @@
     <wire from="(370,160)" to="(550,160)"/>
     <wire from="(310,180)" to="(310,210)"/>
     <wire from="(320,160)" to="(370,160)"/>
+    <comp lib="0" loc="(380,490)" name="Constant">
+      <a name="width" val="7"/>
+      <a name="value" val="0x10"/>
+    </comp>
+    <comp lib="5" loc="(320,160)" name="Counter">
+      <a name="width" val="7"/>
+      <a name="max" val="0x7f"/>
+    </comp>
+    <comp lib="4" loc="(420,320)" name="Adder">
+      <a name="width" val="7"/>
+    </comp>
+    <comp lib="6" loc="(580,320)" name="DotMatrix">
+      <a name="inputtype" val="row"/>
+      <a name="matrixcols" val="8"/>
+      <a name="matrixrows" val="16"/>
+    </comp>
     <comp lib="0" loc="(380,330)" name="Constant">
       <a name="width" val="7"/>
       <a name="value" val="0x10"/>
     </comp>
+    <comp loc="(560,310)" name="ascii"/>
     <comp loc="(560,470)" name="ascii"/>
+    <comp lib="4" loc="(420,480)" name="Adder">
+      <a name="width" val="7"/>
+    </comp>
+    <comp lib="6" loc="(580,480)" name="DotMatrix">
+      <a name="inputtype" val="row"/>
+      <a name="matrixcols" val="8"/>
+      <a name="matrixrows" val="16"/>
+    </comp>
     <comp lib="0" loc="(300,180)" name="Clock">
       <a name="facing" val="north"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="6" loc="(580,480)" name="DotMatrix">
+    <comp lib="6" loc="(580,160)" name="DotMatrix">
       <a name="inputtype" val="row"/>
       <a name="matrixcols" val="8"/>
       <a name="matrixrows" val="16"/>
@@ -283,31 +308,6 @@
       <a name="tristate" val="false"/>
       <a name="label" val="RESET"/>
       <a name="labelloc" val="south"/>
-    </comp>
-    <comp lib="4" loc="(420,320)" name="Adder">
-      <a name="width" val="7"/>
-    </comp>
-    <comp lib="6" loc="(580,160)" name="DotMatrix">
-      <a name="inputtype" val="row"/>
-      <a name="matrixcols" val="8"/>
-      <a name="matrixrows" val="16"/>
-    </comp>
-    <comp lib="0" loc="(380,490)" name="Constant">
-      <a name="width" val="7"/>
-      <a name="value" val="0x10"/>
-    </comp>
-    <comp lib="4" loc="(420,480)" name="Adder">
-      <a name="width" val="7"/>
-    </comp>
-    <comp loc="(560,310)" name="ascii"/>
-    <comp lib="5" loc="(320,160)" name="Counter">
-      <a name="width" val="7"/>
-      <a name="max" val="0x7f"/>
-    </comp>
-    <comp lib="6" loc="(580,320)" name="DotMatrix">
-      <a name="inputtype" val="row"/>
-      <a name="matrixcols" val="8"/>
-      <a name="matrixrows" val="16"/>
     </comp>
   </circuit>
   <circuit name="read">
@@ -343,70 +343,12 @@
     <wire from="(320,90)" to="(320,210)"/>
     <wire from="(320,210)" to="(520,210)"/>
     <wire from="(520,90)" to="(520,210)"/>
-    <comp lib="0" loc="(210,170)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="sel"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(210,160)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="tristate" val="false"/>
-    </comp>
-    <comp lib="0" loc="(250,310)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Addr_out"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(370,160)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(210,260)" name="Tunnel">
-      <a name="width" val="7"/>
-      <a name="label" val="Addr"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="4" loc="(250,270)" name="Adder">
-      <a name="width" val="7"/>
-    </comp>
-    <comp lib="0" loc="(270,170)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Addr"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(210,280)" name="Tunnel">
-      <a name="width" val="7"/>
-      <a name="label" val="in"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
     <comp lib="0" loc="(460,160)" name="Pin">
       <a name="facing" val="south"/>
       <a name="output" val="true"/>
       <a name="width" val="7"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Addr"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(270,160)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="7"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="Addr"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(300,310)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="sel"/>
-      <a name="labelfont" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(150,170)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="7"/>
-      <a name="label" val="in"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
     <comp lib="5" loc="(390,270)" name="ROM">
@@ -426,12 +368,29 @@
       <a name="label" val="Out"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
-    <comp lib="0" loc="(150,160)" name="Pin">
+    <comp lib="0" loc="(210,170)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="sel"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(210,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(300,310)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="sel"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(270,160)" name="Pin">
       <a name="facing" val="south"/>
       <a name="width" val="7"/>
       <a name="tristate" val="false"/>
-      <a name="label" val="in"/>
+      <a name="label" val="Addr"/>
       <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="4" loc="(250,270)" name="Adder">
+      <a name="width" val="7"/>
     </comp>
     <comp lib="0" loc="(390,270)" name="Tunnel">
       <a name="facing" val="west"/>
@@ -439,10 +398,51 @@
       <a name="label" val="Out"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
+    <comp lib="0" loc="(270,170)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Addr"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(250,310)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Addr_out"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(210,260)" name="Tunnel">
+      <a name="width" val="7"/>
+      <a name="label" val="Addr"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(210,280)" name="Tunnel">
+      <a name="width" val="7"/>
+      <a name="label" val="in"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,170)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="7"/>
+      <a name="label" val="in"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(370,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
     <comp lib="0" loc="(460,170)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="width" val="7"/>
       <a name="label" val="Addr_out"/>
+      <a name="labelfont" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(150,160)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="7"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="in"/>
       <a name="labelfont" val="Dialog plain 12"/>
     </comp>
   </circuit>
@@ -551,43 +551,22 @@
     <wire from="(150,380)" to="(200,380)"/>
     <wire from="(220,350)" to="(270,350)"/>
     <wire from="(250,380)" to="(300,380)"/>
-    <comp lib="0" loc="(810,190)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row16"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="7" loc="(629,208)" name="Text">
-      <a name="text" val="输出引脚"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp lib="0" loc="(650,50)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row3"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(670,50)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row3"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(490,50)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row2"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp loc="(430,340)" name="read"/>
-    <comp lib="0" loc="(550,340)" name="Tunnel">
+    <comp lib="0" loc="(850,340)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="width" val="8"/>
-      <a name="label" val="row9"/>
+      <a name="label" val="row15"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp lib="0" loc="(780,40)" name="Tunnel">
+    <comp lib="0" loc="(400,340)" name="Tunnel">
+      <a name="facing" val="south"/>
       <a name="width" val="8"/>
-      <a name="label" val="row1"/>
+      <a name="label" val="row6"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(500,50)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row2"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
     <comp lib="0" loc="(450,340)" name="Tunnel">
@@ -596,204 +575,28 @@
       <a name="label" val="row7"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp lib="0" loc="(650,340)" name="Tunnel">
-      <a name="facing" val="south"/>
+    <comp lib="0" loc="(780,140)" name="Tunnel">
       <a name="width" val="8"/>
       <a name="label" val="row11"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp lib="0" loc="(500,110)" name="Tunnel">
+    <comp lib="0" loc="(330,110)" name="Tunnel">
       <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row8"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(170,350)" name="Constant">
-      <a name="width" val="7"/>
-    </comp>
-    <comp lib="0" loc="(110,90)" name="Pin">
-      <a name="facing" val="south"/>
-      <a name="width" val="7"/>
-      <a name="tristate" val="false"/>
-      <a name="label" val="ASCII-CODE"/>
-    </comp>
-    <comp loc="(880,340)" name="read"/>
-    <comp lib="0" loc="(330,80)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row4"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(490,170)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row14"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(810,170)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row14"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="6" loc="(830,40)" name="DotMatrix">
-      <a name="inputtype" val="row"/>
-      <a name="matrixcols" val="8"/>
-      <a name="matrixrows" val="16"/>
-    </comp>
-    <comp lib="7" loc="(449,248)" name="Text">
-      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp loc="(780,340)" name="read"/>
-    <comp loc="(230,340)" name="read"/>
-    <comp lib="0" loc="(200,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row2"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(780,100)" name="Tunnel">
       <a name="width" val="8"/>
       <a name="label" val="row7"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp lib="0" loc="(120,350)" name="Constant">
-      <a name="width" val="7"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(650,80)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row6"/>
-      <a name="labelloc" val="west"/>
-    </comp>
+    <comp loc="(480,340)" name="read"/>
     <comp lib="0" loc="(310,80)" name="Pin">
       <a name="output" val="true"/>
       <a name="width" val="8"/>
       <a name="label" val="row4"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(330,50)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row1"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(700,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row12"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(320,140)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row10"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(750,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row13"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(800,110)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row8"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(330,200)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row16"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(120,360)" name="Tunnel">
-      <a name="width" val="7"/>
-      <a name="label" val="Code"/>
-    </comp>
-    <comp loc="(330,340)" name="read"/>
-    <comp lib="0" loc="(660,140)" name="Pin">
+    <comp lib="0" loc="(650,50)" name="Pin">
       <a name="output" val="true"/>
       <a name="width" val="8"/>
-      <a name="label" val="row12"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(600,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row10"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(850,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row15"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(780,180)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row15"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(800,90)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row6"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(780,140)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row11"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(680,140)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row12"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp loc="(480,340)" name="read"/>
-    <comp loc="(380,340)" name="read"/>
-    <comp lib="0" loc="(780,80)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row5"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp loc="(130,340)" name="read"/>
-    <comp lib="0" loc="(310,170)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row13"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp loc="(630,340)" name="read"/>
-    <comp lib="0" loc="(500,80)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row5"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(660,170)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row15"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(800,70)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row4"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(120,380)" name="Constant"/>
-    <comp lib="0" loc="(780,160)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row13"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(490,110)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row8"/>
+      <a name="label" val="row3"/>
       <a name="labelloc" val="west"/>
     </comp>
     <comp lib="0" loc="(900,340)" name="Tunnel">
@@ -802,7 +605,23 @@
       <a name="label" val="row16"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp loc="(830,340)" name="read"/>
+    <comp lib="0" loc="(660,140)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row12"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(300,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row4"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(780,60)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row3"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
     <comp lib="0" loc="(310,200)" name="Pin">
       <a name="output" val="true"/>
       <a name="width" val="8"/>
@@ -815,155 +634,11 @@
       <a name="label" val="row1"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(500,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row8"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(680,110)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row9"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="7" loc="(111,154)" name="Text">
-      <a name="text" val="ASCII编码"/>
-      <a name="font" val="SansSerif plain 12"/>
-    </comp>
-    <comp lib="0" loc="(780,120)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row9"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(810,130)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row10"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(800,50)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row2"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(310,110)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row7"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(800,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row14"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(250,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row3"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(500,50)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row2"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp loc="(180,340)" name="read"/>
+    <comp loc="(280,340)" name="read"/>
     <comp lib="0" loc="(680,170)" name="Tunnel">
       <a name="facing" val="west"/>
       <a name="width" val="8"/>
       <a name="label" val="row15"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp loc="(530,340)" name="read"/>
-    <comp lib="7" loc="(110,187)" name="Text">
-      <a name="text" val="输入引脚"/>
-      <a name="font" val="SansSerif bold 12"/>
-    </comp>
-    <comp loc="(280,340)" name="read"/>
-    <comp lib="0" loc="(400,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row6"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(490,140)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row11"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(330,170)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row13"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp loc="(730,340)" name="read"/>
-    <comp lib="0" loc="(480,200)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="label" val="CodeErr"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp lib="0" loc="(680,80)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row6"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(490,80)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row5"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp loc="(680,340)" name="read"/>
-    <comp lib="0" loc="(110,100)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="7"/>
-      <a name="label" val="Code"/>
-    </comp>
-    <comp lib="0" loc="(350,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row5"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(300,340)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row4"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(500,170)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row14"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(500,200)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="label" val="CodeErr"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(780,60)" name="Tunnel">
-      <a name="width" val="8"/>
-      <a name="label" val="row3"/>
-      <a name="labelfont" val="Dialog plain 8"/>
-    </comp>
-    <comp lib="0" loc="(310,140)" name="Pin">
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row10"/>
-      <a name="labelloc" val="west"/>
-    </comp>
-    <comp loc="(580,340)" name="read"/>
-    <comp lib="0" loc="(330,110)" name="Tunnel">
-      <a name="facing" val="west"/>
-      <a name="width" val="8"/>
-      <a name="label" val="row7"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
     <comp lib="0" loc="(660,110)" name="Pin">
@@ -972,11 +647,270 @@
       <a name="label" val="row9"/>
       <a name="labelloc" val="west"/>
     </comp>
-    <comp lib="0" loc="(500,140)" name="Tunnel">
+    <comp lib="0" loc="(800,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row14"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(330,200)" name="Tunnel">
       <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row16"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(500,110)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row8"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(490,170)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row14"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(250,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row3"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(780,340)" name="read"/>
+    <comp lib="0" loc="(500,170)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row14"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(120,350)" name="Constant">
+      <a name="width" val="7"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(500,200)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="label" val="CodeErr"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(800,110)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row8"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(380,340)" name="read"/>
+    <comp lib="0" loc="(780,120)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row9"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(780,160)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row13"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(490,50)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row2"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="7" loc="(110,187)" name="Text">
+      <a name="text" val="输入引脚"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp lib="0" loc="(680,140)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row12"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="7" loc="(111,154)" name="Text">
+      <a name="text" val="ASCII编码"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="0" loc="(650,340)" name="Tunnel">
+      <a name="facing" val="south"/>
       <a name="width" val="8"/>
       <a name="label" val="row11"/>
       <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(780,100)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row7"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(680,80)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row6"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(810,130)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row10"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(330,170)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row13"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(660,170)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row15"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(550,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row9"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(200,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row2"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(780,180)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row15"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(430,340)" name="read"/>
+    <comp lib="0" loc="(120,380)" name="Constant"/>
+    <comp lib="6" loc="(830,40)" name="DotMatrix">
+      <a name="inputtype" val="row"/>
+      <a name="matrixcols" val="8"/>
+      <a name="matrixrows" val="16"/>
+    </comp>
+    <comp loc="(880,340)" name="read"/>
+    <comp lib="0" loc="(120,360)" name="Tunnel">
+      <a name="width" val="7"/>
+      <a name="label" val="Code"/>
+    </comp>
+    <comp lib="0" loc="(310,140)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row10"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp loc="(730,340)" name="read"/>
+    <comp lib="7" loc="(485,272)" name="Text">
+      <a name="text" val="提示：使用只读存储器ROM加载ASCII码点阵字库、ROM片选信号高电平有效"/>
+      <a name="font" val="Dialog plain 12"/>
+    </comp>
+    <comp lib="0" loc="(490,110)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row8"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(350,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row5"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(110,100)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="7"/>
+      <a name="label" val="Code"/>
+    </comp>
+    <comp lib="0" loc="(800,90)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row6"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(330,80)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row4"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(810,190)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row16"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(500,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row8"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(490,140)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row11"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(110,90)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="width" val="7"/>
+      <a name="tristate" val="false"/>
+      <a name="label" val="ASCII-CODE"/>
+    </comp>
+    <comp lib="0" loc="(320,140)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row10"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(630,340)" name="read"/>
+    <comp lib="0" loc="(810,170)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row14"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(810,150)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row12"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(600,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row10"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(130,340)" name="read"/>
+    <comp lib="0" loc="(650,80)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row6"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(680,110)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row9"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(700,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row12"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(680,340)" name="read"/>
+    <comp loc="(530,340)" name="read"/>
+    <comp lib="0" loc="(800,70)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row4"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="7" loc="(629,208)" name="Text">
+      <a name="text" val="输出引脚"/>
+      <a name="font" val="SansSerif bold 12"/>
+    </comp>
+    <comp loc="(580,340)" name="read"/>
+    <comp lib="7" loc="(449,248)" name="Text">
+      <a name="text" val="请勿修改引脚名称、电路名称及电路封装外观"/>
+      <a name="font" val="Dialog plain 12"/>
     </comp>
     <comp lib="0" loc="(150,340)" name="Tunnel">
       <a name="facing" val="south"/>
@@ -984,13 +918,79 @@
       <a name="label" val="row1"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
-    <comp lib="7" loc="(485,272)" name="Text">
-      <a name="text" val="提示：使用只读存储器ROM加载ASCII码点阵字库、ROM片选信号高电平有效"/>
-      <a name="font" val="Dialog plain 12"/>
-    </comp>
-    <comp lib="0" loc="(810,150)" name="Tunnel">
+    <comp lib="0" loc="(800,50)" name="Tunnel">
       <a name="width" val="8"/>
-      <a name="label" val="row12"/>
+      <a name="label" val="row2"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(330,50)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row1"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(830,340)" name="read"/>
+    <comp loc="(230,340)" name="read"/>
+    <comp lib="0" loc="(670,50)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row3"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(500,80)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row5"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(480,200)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="label" val="CodeErr"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(780,40)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row1"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(180,340)" name="read"/>
+    <comp lib="0" loc="(500,140)" name="Tunnel">
+      <a name="facing" val="west"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row11"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp loc="(330,340)" name="read"/>
+    <comp lib="0" loc="(310,170)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row13"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(310,110)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row7"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(170,350)" name="Constant">
+      <a name="width" val="7"/>
+    </comp>
+    <comp lib="0" loc="(490,80)" name="Pin">
+      <a name="output" val="true"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row5"/>
+      <a name="labelloc" val="west"/>
+    </comp>
+    <comp lib="0" loc="(780,80)" name="Tunnel">
+      <a name="width" val="8"/>
+      <a name="label" val="row5"/>
+      <a name="labelfont" val="Dialog plain 8"/>
+    </comp>
+    <comp lib="0" loc="(750,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="8"/>
+      <a name="label" val="row13"/>
       <a name="labelfont" val="Dialog plain 8"/>
     </comp>
   </circuit>
