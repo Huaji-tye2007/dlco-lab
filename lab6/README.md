@@ -1,7 +1,7 @@
 # ABOUT THIS LAB
 
 这个实验需要手动设计的其实只有两个实验：控制器和单周期CPU的设计，另外的实验都是在进行测试，`testcase`和`C Test`都是测试文件夹，内部包含测试文件。
-考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试还是没有很好的办法实现自动化，如果有同学想出了什么好办法希望能够在issue区里分享一下。
+考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试和`testcase`中的部分`Load`、`Store`命令测试还是没有很好的办法实现方便的自动化，如果有同学想出了什么好办法希望能够在issue区里分享一下。
 
 ## ABOUT autotest
 
@@ -60,9 +60,7 @@ rv32ui-p-addi.hex : 0000 0000 1100 0000 1111 1111 1110 1110 0000 0000 0000 0000 
 
 如果测试没有通过，标志位是0，否则为1；并设置了100秒最大测试时间，如果显示`Testing xxx.hex Timeout`，说明测试没有在100秒内完成，大概率是电路设计有问题导致死循环。
 
-Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Linux环境下运行测试脚本，或者使用WSL（Windows Subsystem for Linux）来运行测试脚本。
-
-其实这部分的测试都不需要手动加载DataRAM的值，因为提供了不需要RAM的测试文件，而且产生的结果（指寄存器的值）应该是相同的（前提是DataRAM的实现绝对正确）。
+Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Linux环境下运行测试脚本，或者使用WSL（Windows Subsystem for Linux）来运行测试脚本。第一次运行通常会很慢，可以多试几次。`Load`和`Store`指令的测试需要手动输入，这个脚本测量出来的不够准确。
 
 ## ABOUT OJ
 
@@ -86,4 +84,8 @@ Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Li
 
 ## ABOUT THE CONTROLLER
 
-我的控制器的设计相当丑陋，不建议效仿，老师课上的PPT应该有更好的实现方法。
+**我的控制器的设计相当丑陋，不建议效仿**，老师课上的PPT应该有更好的实现方法。
+
+## ABOUT THE CHECK
+
+验收需要填写一张表格，已经给出。填写表格所需数据均在`testcase`和`RV32I`中，需要注意所谓的“数据存储器地址”和Logisim中DataRAM的地址并不是一个概念。

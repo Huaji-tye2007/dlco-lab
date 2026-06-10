@@ -1,10 +1,13 @@
 */assets/*
-*.log
 *.tex
+*.log
 *.aux
 *.out
+*.toc
 *.synctex.gz
-*.zip
 *.txt
-*.ipynb
-*.atfi
+*.c
+*.sh
+*.ps1
+*.atif
+*.zip
