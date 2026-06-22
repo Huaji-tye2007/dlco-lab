@@ -1,7 +1,7 @@
 # ABOUT THIS LAB
 
 这个实验需要手动设计的其实只有两个实验：控制器和单周期CPU的设计，另外的实验都是在进行测试，`testcase`和`C Test`都是测试文件夹，内部包含测试文件。
-考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试和`testcase`中的部分`Load`、`Store`命令测试还是没有很好的办法实现方便的自动化，如果有同学想出了什么好办法希望能够在issue区里分享一下。
+考虑到需要测试的指令和程序众多，我编写了一个自动化测试脚本`autotest.sh`(适用于bash)、`autotest.py`(适用于Python 3.10+)和 ~~又臭又长的~~ `autotest.ps1`(适用于pwsh7，由copilot生成)。但是由于无法直接从circ文件修改RAM的值，而Logisim的命令行工具也无法单独修改RAM的值，因此`C Test`中的所有测试和`testcase`中的部分`Load`、`Store`命令测试还是没有很好的办法实现方便的自动化，如果有同学想出了什么好办法希望能够在issue区里分享一下。
 
 ## ABOUT autotest
 
@@ -14,6 +14,7 @@
 
 - Bash shell (for `autotest.sh`)
 - PowerShell 7 (for `autotest.ps1`)
+- Python 3.10+ (for `autotest.py`)
 - **Logisim-ITA.jar** (for running the tests) **注意是jar文件！**
 - 目录树：
     ```
@@ -41,6 +42,8 @@ cd path/to/lab6
 ./autotest.sh
 # 对于PowerShell用户
 .\autotest.ps1
+# 使用Python脚本
+python autotest.py
 ```
 
 脚本会自动运行`lab6.5.circ`中的test电路图，并依次用`testcase`文件夹中的测试文件替换原有指令存储器的值进行测试。
@@ -58,9 +61,17 @@ rv32ui-p-add.hex : 0000 0000 1100 0000 1111 1111 1110 1110  0000 0000 0000 0000 
 rv32ui-p-addi.hex : 0000 0000 1100 0000 1111 1111 1110 1110 0000 0000 0000 0000 0000 0000 0001 1001 0000 0000 0000 0000 0000 0000 0010 0001 1 0000 0000 1110 1011
 ```
 
+若是Python脚本，输出在result_py.txt中，格式如下：
+
+```txt
+测试指令 	 & RS2转发次数 	 & RS1转发次数 	 & 分支指令数 	 & 跳转指令数 	 & 冲刷次数 	 & 阻塞次数 	 & 总周期数 	 & 是否通过 
+add & 120 & 84 & 68 & 0 & 16 & 0 & 493 & Passed
+```
+
 如果测试没有通过，标志位是0，否则为1；并设置了100秒最大测试时间，如果显示`Testing xxx.hex Timeout`，说明测试没有在100秒内完成，大概率是电路设计有问题导致死循环。
 
-Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Linux环境下运行测试脚本，或者使用WSL（Windows Subsystem for Linux）来运行测试脚本。第一次运行通常会很慢，可以多试几次。`Load`和`Store`指令的测试需要手动输入，这个脚本测量出来的不够准确。
+Logisim-ITA的命令行工具在Windows下运行速度可能较慢，建议在Linux环境下运行测试脚本，或者使用WSL（Windows Subsystem for Linux）来运行测试脚本。**更推荐使用Python脚本。**
+第一次运行通常会很慢，可以多试几次。`Load`和`Store`指令的测试需要手动输入，这个脚本测量出来的不准。
 
 ## ABOUT OJ
 
