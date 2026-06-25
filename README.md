@@ -55,10 +55,12 @@
 - [《数字逻辑与计算机组成：习题解答与实验教程》](https://zh.z-lib.sk/book/oqkZwK63zA/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90-%E4%B9%A0%E9%A2%98%E8%A7%A3%E7%AD%94%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%95%99%E7%A8%8B.html)：这里可能有部分实验的设计思路和实现方法，建议在遇到困难时参考。
 - 各类AI工具：现在的AI虽然不能直接生成完整的电路设计（至少我学习此课时如此），但可以帮助你理解一些概念，或者在你卡住的时候提供一些电路实现上的启发。
 
-关于往年卷，可以在这些链接里找找。
+关于往年卷和这门课的其它指南，可以在这些链接里找找。
 
 - [某个学长的仓库](https://github.com/retiaw/NJUCS)
-- [智科全家桶](https://njuis-students.github.io/)
 - [ICS-WIKI](https://njuics-wiki.github.io/ics-wiki/)
+- [Wuqiovo的博客](https://wuqiovo.github.io/)
 
 最后，记得看一下每个lab中的README（如果有的话），其中会包含一些对仓库内容的说明。
+
+本仓库采用 CC BY-NC-SA 4.0 协议。
