@@ -60,6 +60,7 @@
 - [某个学长的仓库](https://github.com/retiaw/NJUCS)
 - [ICS-WIKI](https://njuics-wiki.github.io/ics-wiki/)
 - [Wuqiovo的博客](https://wuqiovo.github.io/)
+- [我的DLCO仓库](https://git.nju.edu.cn/huajitye2007/dlco-courseware)
 
 最后，记得看一下每个lab中的README（如果有的话），其中会包含一些对仓库内容的说明。
 
