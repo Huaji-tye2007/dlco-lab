@@ -9,3 +9,4 @@
 *.ipynb
 *.atfi
 */__pycache__/*
+*/*.typ
